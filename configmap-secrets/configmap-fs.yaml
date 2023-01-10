@@ -1,0 +1,33 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: config-test
+  labels:
+    name: config-test
+spec:
+  containers:
+  - name: config-test
+    image: busybox
+    command: ["/bin/sh", "-ec", "echo $(ECHO_VAR); sleep 100"]
+    env:
+    - name: VAR1
+      valueFrom:
+        configMapKeyRef:
+          name: test-cm
+          key: new-var
+    - name: ECHO_VAR
+      valueFrom:
+        configMapKeyRef:
+          key: new-var-2
+          name: test-cm
+    volumeMounts:
+      - name: config-volume
+        mountPath: /config
+    resources:
+      limits:
+        memory: "128Mi"
+        cpu: "500m"
+  volumes:
+    - name: config-volume
+      configMap:
+        name: test-cm

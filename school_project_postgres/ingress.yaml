@@ -1,0 +1,17 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: school-api
+spec:
+  ingressClassName: public
+  rules:
+    - host: api.school-project.com
+      http:
+        paths:
+          - backend:
+              service:
+                name: school-project
+                port:
+                  number: 8000
+            pathType: Prefix
+            path: /

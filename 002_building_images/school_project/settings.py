@@ -26,7 +26,7 @@ SECRET_KEY = 'django-insecure-f=m^t@hik9hek!l3)c@=k-^4i(ans4442t!%0jq@w_c6j3wm)!
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ["api.school-project.com", "localhost"]
 
 
 # Application definition
@@ -87,10 +87,10 @@ DATABASES = {
 #     'default': {
 #         'ENGINE': 'django.db.backends.postgresql_psycopg2',
 #         'NAME': 'school',
-#         'USER': 'postgres',
-#         'PASSWORD': 'postgres', 
-#         'HOST': 'localhost',
-#         'PORT': '5432',
+#         'USER': os.getenv("DB_USER", 'postgres'),
+#         'PASSWORD': os.getenv("DB_PASSWORD", 'postgres'), 
+#         'HOST': os.getenv("DB_HOST", 'localhost'),
+#         'PORT': os.getenv("DB_PORT", '5432'),
 #     }
 # }
 

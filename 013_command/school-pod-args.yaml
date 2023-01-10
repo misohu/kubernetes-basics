@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: school-pod
+spec:
+  containers:
+  - image: misohu/django-school-project:sqlite
+    args:
+      - "runserver"
+      - "0.0.0.0:8001"
+    name: school-pod
+    ports:
+    - containerPort: 8001
+    resources: {}
