@@ -1,0 +1,36 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: nginx
+  name: nginx
+spec:
+  replicas: 4
+  selector:
+    matchLabels:
+      app: nginx
+  template:
+    metadata:
+      labels:
+        app: nginx
+    spec:
+      containers:
+      - name: nginx
+        image: nginx
+        resources: {}
+        envFrom:
+          - configMapRef:
+              name: test-cm
+        env:
+          - name: NAME
+            valueFrom:
+              configMapKeyRef:
+                key: name
+                name: test-cm2
+        volumeMounts:
+          - mountPath: /etc/config
+            name: configmap-data
+      volumes:
+        - name: configmap-data
+          configMap:
+            name: test-cm2

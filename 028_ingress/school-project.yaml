@@ -1,0 +1,25 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: school-project
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: school-project
+  template:
+    metadata:
+      labels:
+        app: school-project
+    spec:
+      containers:
+        - name: school-project
+          image: misohu/django-school-project:sqlite
+          imagePullPolicy: Always
+          command:
+          - /bin/sh
+          - -c
+          - python manage.py migrate; python manage.py runserver 0.0.0.0:8000
+          ports:
+            - containerPort: 8000 
+          resources: {}

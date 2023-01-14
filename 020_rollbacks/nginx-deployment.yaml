@@ -1,27 +1,28 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
+  annotations:
+    kubernetes.io/change-cause: "image updated to 1.20"
   labels:
-    app: nginx-deployment
-  name: nginx-deployment
+    app: nginx
+  name: nginx
 spec:
-  replicas: 2
+  replicas: 4
   selector:
     matchLabels:
-      app: nginx-deployment
+      app: nginx
   template:
     metadata:
       labels:
-        app: nginx-deployment
+        app: nginx
     spec:
       containers:
       - name: nginx
-        image: nginx
+        image: nginx:1.20
         resources: {}
   strategy:
     rollingUpdate:
-      maxSurge: 25%
+      maxSurge: 0
       maxUnavailable: 25%
     type: RollingUpdate
-
-  
+    
