@@ -1,0 +1,10 @@
+apiVersion: certificates.k8s.io/v1
+kind: CertificateSigningRequest
+metadata:
+  name: michal-csr
+spec:
+  request: ${BASE64_CSR}
+  signerName: kubernetes.io/kube-apiserver-client
+  expirationSeconds: 86400  # one day
+  usages:
+  - client auth

@@ -1,0 +1,12 @@
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRoleBinding
+metadata:
+  name: namespace-creator-michal
+subjects:
+- kind: User
+  name: michal
+  apiGroup: rbac.authorization.k8s.io
+roleRef:
+  kind: ClusterRole
+  name: namespace-creator
+  apiGroup: rbac.authorization.k8s.io

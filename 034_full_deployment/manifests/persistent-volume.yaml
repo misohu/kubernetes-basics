@@ -1,0 +1,17 @@
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: db-pv
+  namespace: full-deployment
+  labels:
+    app: postgres-app
+spec:
+  capacity:
+    storage: 1Gi
+  accessModes:
+    - ReadWriteOnce
+  storageClassName: microk8s-hostpath
+  hostPath:
+    path: /home/pocik/Documents/Tutorials/kubernetes-for-beginners/db-data
+
+

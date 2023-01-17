@@ -76,23 +76,23 @@ WSGI_APPLICATION = 'school_project.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.getenv("DATADIR", BASE_DIR / 'db.sqlite3'),
-    }
-}
-
 # DATABASES = {
 #     'default': {
-#         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-#         'NAME': 'school',
-#         'USER': os.getenv("DB_USER", 'postgres'),
-#         'PASSWORD': os.getenv("DB_PASSWORD", 'postgres'), 
-#         'HOST': os.getenv("DB_HOST", 'localhost'),
-#         'PORT': os.getenv("DB_PORT", '5432'),
+#         'ENGINE': 'django.db.backends.sqlite3',
+#         'NAME': os.getenv("DATADIR", BASE_DIR / 'db.sqlite3'),
 #     }
 # }
+
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': 'school',
+        'USER': os.getenv("DB_USER", 'postgres'),
+        'PASSWORD': os.getenv("DB_PASSWORD", 'postgres'), 
+        'HOST': os.getenv("DB_HOST", 'localhost'),
+        'PORT': os.getenv("DB_PORT", '5432'),
+    }
+}
 
 
 # Password validation

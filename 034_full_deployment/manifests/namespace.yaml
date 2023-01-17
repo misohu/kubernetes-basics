@@ -1,0 +1,7 @@
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: full-deployment
+  labels:
+    app: postgres-app
+
