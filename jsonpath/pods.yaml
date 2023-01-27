@@ -1,0 +1,41 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  labels:
+    run: nginx
+  name: nginx
+spec:
+  containers:
+  - image: nginx
+    name: nginx
+    ports:
+    - containerPort: 80
+    resources: {}
+---
+apiVersion: v1
+kind: Pod
+metadata:
+  labels:
+    run: apache
+  name: apache
+spec:
+  containers:
+  - image: httpd
+    name: apache
+    ports:
+    - containerPort: 80
+    resources: {}
+---
+apiVersion: v1
+kind: Pod
+metadata:
+  labels:
+    run: nginx2
+  name: nginx2
+spec:
+  containers:
+  - image: nginx
+    name: nginx2
+    ports:
+    - containerPort: 80
+    resources: {}
