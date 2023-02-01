@@ -35,5 +35,5 @@ spec:
   volumes:
     - name: db-data
       hostPath:
-        path: /home/pocik/Documents/Tutorials/kubernetes-for-beginners/db-data
+        path: /home/pocik/Documents/tutorials/kubernetes-basics/032_host_path/db-data
         type: DirectoryOrCreate   # optional will create the dir if it does not exist
