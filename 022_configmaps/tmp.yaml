@@ -1,0 +1,9 @@
+apiVersion: v1
+data:
+  course: kubernetes
+  level: beginner
+  field: new
+kind: ConfigMap
+metadata:
+  name: test-cm
+  namespace: default

@@ -11,6 +11,6 @@ spec:
     - ReadWriteOnce
   storageClassName: microk8s-hostpath
   hostPath:
-    path: /home/pocik/Documents/Tutorials/kubernetes-for-beginners/db-data
+    path: /home/pocik/Documents/tutorials/kubernetes-basics/033_persistent_volumes_microk8s/db-data
 
 

@@ -1,4 +1,5 @@
 #!/bin/bash
+microk8s enable metrics-server
 
 # Deploy deployment 
 kubectl apply -f apache-deployment.yaml

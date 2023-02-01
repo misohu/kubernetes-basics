@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # We can create configmap from comandline
-kubectl create secret test-secret --from-literal username=michal --from-literal=password=password --from-file ca.txt
+kubectl create secret generic test-secret --from-literal username=michal --from-literal=password=password --from-file ca.txt
 
 # We can list them
 kubectl get secret 

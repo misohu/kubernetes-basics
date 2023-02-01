@@ -42,7 +42,7 @@ kubectl apply -f busybox.yaml
 # test connection to deployment through service 
 kubectl exec -ti busybox -- wget -O - nginx-deployment:8080
 
-# If you work on wks you can port forward the proxy 
+# If you work on eks you can port forward the proxy 
 kubectl proxy --port=8080
 
 # And then access the clusterIP through the browser

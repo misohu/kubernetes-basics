@@ -1,0 +1,29 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: nginx2
+    version: v2
+  name: nginx2
+spec:
+  replicas: 4
+  selector:
+    matchLabels:
+      app: nginx2
+      version: v2
+  strategy:
+    rollingUpdate:
+      maxSurge: 100%   # blue green
+      maxUnavailable: 0
+  template:
+    metadata:
+      labels:
+        app: nginx2
+        version: v2
+    spec:
+      containers:
+      - image: httpd
+        name: nginx
+        ports:
+        - containerPort: 80
+        resources: {}

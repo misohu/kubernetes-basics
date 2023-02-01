@@ -1,7 +1,7 @@
 apiVersion: v1
 kind: Pod
 metadata:
-  name: school-pod
+  name: school-pod2
 spec:
   containers:
   - command:
@@ -18,5 +18,5 @@ spec:
         cpu: "2"
       limits:
         memory: "512Mi"
-        cpu: "1"
+        cpu: "2"
       

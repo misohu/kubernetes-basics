@@ -1,0 +1,11 @@
+apiVersion: v1
+data:
+  init.sql: |
+    CREATE DATABASE school;
+    grant all privileges on database school to admin;
+kind: ConfigMap
+metadata:
+  name: postgres-init
+  namespace: full-deployment
+  labels:
+    app: postgres-app

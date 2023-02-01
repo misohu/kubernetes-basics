@@ -1,10 +1,12 @@
 #!/bin/bash
 
+kubectl create ns deployment-example
+
 # Deploy deployment and expose it 
 kubectl apply -f deployment-example.yaml
 
 # Expose deployment
-kubectl expose deployment nginx-deployment --port 8080 --target-port 80
+kubectl expose -n deployment-example deployment nginx-deployment --port 8080 --target-port 80
 
 # Now in the same namespace create pod for checking dns records
 kubectl run dns-check --image=registry.k8s.io/e2e-test-images/jessie-dnsutils:1.3 --command -- sleep "infinity"

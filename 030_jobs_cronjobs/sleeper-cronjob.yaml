@@ -1,22 +1,18 @@
 apiVersion: batch/v1
 kind: CronJob
 metadata:
-  name: sleeper-scheduled
+  name: hello
 spec:
+  schedule: "*/2 * * * *"
   jobTemplate:
-    metadata:
-      name: sleeper-scheduled
     spec:
       template:
-        metadata:
         spec:
           containers:
           - image: busybox
-            name: sleeper-scheduled
+            name: sleeper
             resources: {}
             command:
               - "sleep"
               - "5"
-          restartPolicy: OnFailure
-  schedule: '*/2 * * * *'
-status: {}
+          restartPolicy: Never

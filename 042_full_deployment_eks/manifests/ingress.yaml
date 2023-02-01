@@ -1,0 +1,23 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: school-api
+  namespace: full-deployment
+  labels:
+    app: nginx-ingress
+  annotations:
+    alb.ingress.kubernetes.io/scheme: internet-facing
+    alb.ingress.kubernetes.io/target-type: ip
+    kubernetes.io/ingress.class: alb
+spec:
+  rules:
+    - host: school.kubernetes.course
+      http:
+        paths:
+          - backend:
+              service:
+                name: school-project
+                port:
+                  number: 8000
+            pathType: Prefix
+            path: /

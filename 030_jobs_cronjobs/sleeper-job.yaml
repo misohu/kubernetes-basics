@@ -13,6 +13,6 @@ spec:
         resources: {}
         command:
           - "sleep"
-          - "20"
+          - "5"
       restartPolicy: Never
 status: {}

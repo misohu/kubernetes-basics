@@ -25,7 +25,7 @@ kubectl apply -f school-project.yaml
 # expose the deployments with nodeports
 kubectl expose deployment school-project --port 8000 --target-port 8000
 kubectl expose deployment nginx --port 80 --target-port 80
-kubectl expose deployment apache --port 80
+kubectl expose deployment apache --port 80 --target-port 80
 
 # deploy ingress 
 kubectl apply -f ingress.yaml

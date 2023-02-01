@@ -14,7 +14,7 @@ kubectl get po -o wide
 kubectl describe po nginx-pod
 
 # Try to deploy non existing container 
-kubectl run nginx-pod-nonsense --image nginx:nonsense --port 80 --namespace default
+kubectl run nginx-pod-nonsense --image nginx:nonsense --port 80
 
 # Check the Status field
 # STATUS in get po is fusion of status of pod containers and reason for the status

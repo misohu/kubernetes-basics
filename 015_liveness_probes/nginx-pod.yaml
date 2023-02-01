@@ -1,14 +1,14 @@
 apiVersion: v1
 kind: Pod
 metadata:
-  name: nginx-pod
+  name: nginx-pod2
 spec:
   containers:
   - image: nginx
     name: nginx-pod
     livenessProbe:
       httpGet:
-        path: /
+        path: /non-existing-ep
         port: 80
       initialDelaySeconds: 3
       periodSeconds: 3

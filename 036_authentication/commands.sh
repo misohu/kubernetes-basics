@@ -54,7 +54,7 @@ kubectl config set-credentials michal --client-key=michal.key --client-certifica
 kubectl config set-context michal --cluster=microk8s-cluster --user=michal
 
 # change context
-kubectl config use-context myuser
+kubectx michal
 
 # Try to list pods in default namespace
 kubectl get po  # this will fail 
